@@ -62,6 +62,11 @@ padding-inline-start: 0;
    margin-right: auto;
  }
 
+ .section{
+   padding-bottom: 94px;
+   padding-top: 94px;
+ }
+
  .bcheader{
 border-bottom: 1px solid #ECECEC;
 }
@@ -97,6 +102,10 @@ border-bottom: 1px solid #ECECEC;
  .container .site-nav .link-nav{
    display: block;
    margin-right: 50px;
+ }
+
+ .container .site-nav .link-nav:last-child {
+    margin-right: 0;
  }
 
  .container.header .increase{
@@ -220,23 +229,16 @@ margin-bottom: 30px;
 }
 
 .container .list.feature{
-      padding-bottom: 94px;
-      padding-top: 94px;
       display: flex; 
           padding-inline-start: 0   
 }
 
 .section .feature-text{
-    flex-basis: (calc(100%-90px)/4);
+    flex-basis: calc((100%-90px)/4);
    }
 
 .section .feature-text:not(:last-child){
    margin-right: 30px;
-}
-
-.list.feature .sub-info.feature{
-   min-width: 270px;
-   max-width: 270px;
 }
 
 .section .list .feature{
@@ -252,32 +254,34 @@ margin-bottom: 30px;
 }
 
 
+.link-image{
+   display: block;
+}
+
+
 .list.wwd{
    display: flex;
    align-items: center;
-}
-
-.section .list.wwd{
-   padding-bottom: 94px;
 }
 
 .list.wwd .item:not(:last-child){
 margin-right: 30px;
 }
 
-.section-team{
+.section.team{
    background-color: var(--last-section-bgcolor);
    letter-spacing: 0.03em;
 }
 
-.section-team .section-title{
+
+.section .section-team-title{
    font-size: 36px;
    line-height: 1.17;
    text-align: center;
-   padding-top: 94px;
+   color: var(--tittle-text-color) ;
 }
       
-.section-team .sub-title{
+.section .list-team .sub-title{
       font-weight: 500;
       font-size: 16px;
       line-height: 1.19;
@@ -286,14 +290,14 @@ margin-right: 30px;
       text-align: center;
    }
 
- .section-team .list{
+ .section .list-team{
+   list-style: none;
    padding-top: 50px;
-   padding-bottom: 94px;
    display: flex;
 
 }
  
-.section-team .sub-text {
+.section .list-team .sub-text {
    font-size: 16px;
    line-height: 1.19;
    margin-top: 10px;
@@ -301,12 +305,12 @@ margin-right: 30px;
    text-align: center;
 }
 
-.section-team .card{
+.section .list-team .card{
    background-color: var(--main-bgcolor);
 
 }
 
-.section-team .card:not(:last-child){
+.section .list-team .card:not(:last-child){
    margin-right: 30px;
 }
 
@@ -336,20 +340,21 @@ margin-right: 30px;
 .footer{
 background-color:var(--footer-bgcolor);
 letter-spacing: 0.03em;
+padding-top: 60px;
+padding-bottom: 60px;
 }
 
-.footer .firspart-logo{
+.footer .footer-firspart-logo{
    display: inline-block;
    color: var(--firspart-logo-footer);
    font-family: Raleway, cursive;
    font-weight: 700;
    font-size: 26px;
    line-height: 1.19;
-   padding-top: 60px;
    padding-bottom: 0;
    margin-bottom: 28px;
 }
-.footer .secondpart-logo{
+.footer .footer-secondpart-logo{
    color: var(--secondpart-logo-footer);
    font-family: Raleway, cursive;
 }
@@ -379,7 +384,6 @@ letter-spacing: 0.03em;
    line-height: 1.71;
    font-style: normal;
    font-style: normal;
-   padding-bottom: 60px;
 }
 
 
@@ -396,6 +400,8 @@ letter-spacing: 0.03em;
    line-height: 1.63;
    cursor: pointer;
    border-radius: 4px;
+   padding: 6px 22px;
+   border: transparent;
 }
 
 .button-portfolioadd{
@@ -407,6 +413,8 @@ letter-spacing: 0.03em;
    line-height: 1.63;
    cursor: pointer;
    border-radius: 4px;
+   padding: 6px 22px;
+   border: transparent;
 }
 
 .button-portfolioadd:hover ,.button-portfolioadd:focus{
@@ -428,43 +436,45 @@ letter-spacing: 0.03em;
 }
   
 .container .buttons{
-   padding-top: 94px;
    margin-bottom: 50px;
 }
 
 .container .list.imgs{
-   padding-bottom: 94px;
    display: flex;
    flex-wrap: wrap;
    padding-inline-start: 0;
 }
  
-.border-box{
+/*.border-box{
    border-bottom: 1px solid #EEEEEE;
    border-right: 1px solid #EEEEEE;
    border-left: 1px solid #EEEEEE;
-}
+}*/
 
 .text.imgs, 
 .title.imgs
-{padding-left: 24px;}
+{padding-left: 24px;
+}
 
-
-.portfolio .list.buttons{
+.section.hero-portfolio .list.buttons{
    display: flex;
    justify-content: center;
 }
 
-.portfolio .list.buttons .itembtn:not(:last-child){
+.section.hero-portfolio .list.buttons .itembtn:not(:last-child){
    margin-right: 8px;
 }
 
 .list.imgs>.item{
-width: 370px;
-margin-right: 30px;
+flex-basis: calc((100%-60px)/3);
 margin-bottom: 30px;
+margin-right: 30px;
 }
 
+.border-box {
+   display: inline-block;
+   max-width: 370px;
+}
 
 .list.imgs>.item:nth-child(3n){
     margin-right: 0;
@@ -474,11 +484,11 @@ margin-bottom: 30px;
    margin-bottom: 0;
 }
 
-.hero-portfolio .title.imgs{
+.section.hero-portfolio .title.imgs{
    margin-top: 20px;
    margin-bottom: 4px;
 }
 
-.hero-portfolio .text.imgs{
+.section.hero-portfolio .text.imgs{
    padding-bottom: 20px;
 }

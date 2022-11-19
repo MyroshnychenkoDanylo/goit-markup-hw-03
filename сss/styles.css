@@ -68,6 +68,11 @@ img{display: block;}
    padding-top: 94px;
  }
 
+ .section.info-add{
+   padding-bottom: 0;
+ }
+
+
  .bcheader{
 border-bottom: 1px solid #ECECEC;
 }
